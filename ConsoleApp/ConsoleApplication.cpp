@@ -12,16 +12,6 @@ public:
 		/* [in] */ boolean value) = 0;
 };
 
-struct WINDOWPLACEMENT
-{
-	UINT  length;
-	UINT  flags;
-	UINT  showCmd;
-	POINT ptMinPosition;
-	POINT ptMaxPosition;
-	RECT  rcNormalPosition;
-};
-
 extern "C"
 {
 	__declspec(dllimport) BOOL WINAPI PostMessageW(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
