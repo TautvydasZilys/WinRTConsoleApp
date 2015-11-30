@@ -23,11 +23,15 @@
     <ClCompile Include="MainPage.xaml.cpp" />
     <ClCompile Include="PrecompiledHeader.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ConsoleApplication.cpp" />
+    <ClCompile Include="Console.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.xaml.h" />
     <ClInclude Include="MainPage.xaml.h" />
     <ClInclude Include="PrecompiledHeader.h" />
+    <ClInclude Include="ConsoleApplication.h" />
+    <ClInclude Include="Console.h" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
