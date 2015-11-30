@@ -4,7 +4,6 @@
 
 HRESULT WindowToHWND(ABI::Windows::UI::Core::ICoreWindow* coreWindow, HWND* hWnd);
 void SendMinimizeMessage(HWND hWnd);
-void SendQuitMessage(int exitCode);
 
 void SetupCommandLineArgs(wchar_t* commandLine, int* argc, wchar_t*** argv);
 void FreeCommandLineArgs(wchar_t** argv);

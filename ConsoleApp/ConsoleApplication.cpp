@@ -25,19 +25,7 @@ struct WINDOWPLACEMENT
 extern "C"
 {
 	__declspec(dllimport) BOOL WINAPI PostMessageW(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
-	__declspec(dllimport) BOOL WINAPI SetWindowPos(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, UINT uFlags);
-	__declspec(dllimport) void WINAPI PostQuitMessage(int nExitCode);
-
-	WINUSERAPI
-		HWND
-		WINAPI
-		GetParent(
-		_In_ HWND hWnd);
-
-	BOOL WINAPI GetWindowPlacement(
-		_In_    HWND            hWnd,
-		_Inout_ WINDOWPLACEMENT *lpwndpl
-		);
+	__declspec(dllimport) HWND WINAPI GetParent(HWND hWnd);
 
 	__declspec(dllimport) LPWSTR* STDAPICALLTYPE CommandLineToArgvW(LPCWSTR lpCmdLine, int* pNumArgs);
 	__declspec(dllimport) HLOCAL WINAPI LocalFree(HLOCAL hMem);	
@@ -57,13 +45,7 @@ HRESULT WindowToHWND(ABI::Windows::UI::Core::ICoreWindow* coreWindow, HWND* hWnd
 void SendMinimizeMessage(HWND hWnd)
 {
 	auto parent = GetParent(hWnd);
-
 	PostMessageW(parent, WM_SYSCOMMAND, SC_MINIMIZE, 0);
-}
-
-void SendQuitMessage(int exitCode)
-{
-	PostQuitMessage(exitCode);
 }
 
 void SetupCommandLineArgs(wchar_t* commandLine, int* argc, wchar_t*** argv)
